@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Animal[] Tab = new Animal[2];
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < Tab.length; i++) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter details for Animal " + (i + 1));
             System.out.print("Nom: ");

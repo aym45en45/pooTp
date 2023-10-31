@@ -4,8 +4,8 @@ public class Animal {
     private String nom;
     private String race;
     private String type;
-    private int carnivore;
-    private int herbivore;
+    private static int carnivore = 0;
+    private static int herbivore = 0;
 
     public Animal(String nom, String race, String type) {
         this.nom = nom;
@@ -14,24 +14,25 @@ public class Animal {
     }
 
     public static void AnimalStatistique(Animal tab[]) {
-        int carnivoreCount = 0;
-        int herbivoreCount = 0;
         
-        for (int i =0;i<2;i++) {
+        for (int i =0;i<tab.length;i++) {
             if (tab[i].getType().equalsIgnoreCase("carnivore")) {
-                carnivoreCount++;
+                Animal.carnivore++;
             } else if (tab[i].getType().equalsIgnoreCase("herbivore")) {
-                herbivoreCount++;
+                Animal.herbivore++;
             }
         }
-        tab[0].carnivore = carnivoreCount;
-        tab[0].herbivore = herbivoreCount;
-
+        System.out.println("Nombre de carnivore : " + Animal.carnivore);
+        System.out.println("Nombre d'herbivore : " + Animal.herbivore);
+        
     }
     
     public static void toString(Animal tab[]) {
-        System.out.println("Nombre de carnivore : " + tab[0].carnivore);
-        System.out.println("Nombre d'herbivore : " + tab[0].herbivore);
+        for(int i =0;i<tab.length;i++){
+            System.out.println("name of this animal "+(i+1)+" is : " + tab[i].nom);
+            System.out.println("race of this animal "+(i+1)+" is : " + tab[i].race);
+            System.out.println("type of this animal "+(i+1)+" is : " + tab[i].type);
+        }
     }
     
     public String getType() {
