@@ -10,7 +10,7 @@ public class Main {
             String nom = scanner.next();
             System.out.print("Race: ");
             String race = scanner.next();
-            String type = null;
+            String type = null; 
             while (true) {
                 try {
                     System.out.print("Type (carnivore or herbivore): ");
