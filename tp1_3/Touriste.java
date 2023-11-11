@@ -5,17 +5,26 @@ public class Touriste {
     private String prenom;
     private String nationalite;
     private int age;
-    ArrayList<Pays> pays = new ArrayList<Pays>();
+    ArrayList<Pays> pays;
 
     public Touriste(String nom, String prenom, String nationalite, int age) {
         this.nom = nom;
         this.prenom = prenom;
         this.nationalite = nationalite;
         this.age = age;
+        pays = new ArrayList<Pays>();
+
     }
 
     public void AjouterPays(String P) {
-        pays.add(new Pays(P));
+        if (pays.size() == 0)
+            pays.add(new Pays(P));
+        else {
+            for (Pays p : pays) {
+                if (!p.Name.equals(P))
+                    pays.add(new Pays(P));
+            }
+        }
     }
 
     public void AfficherListePays() {

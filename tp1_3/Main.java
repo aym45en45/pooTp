@@ -8,7 +8,7 @@ public class Main {
         String nationalite = "alg";
         int age = 22;
 
-        Touriste touriste = new Touriste(name, prenom, nationalite, 22);
+        Touriste touriste = new Touriste(name, prenom, nationalite, age);
 
         System.out.print("how many country this touriste visit : ");
         int n = scanner.nextInt();
@@ -18,7 +18,7 @@ public class Main {
             touriste.AjouterPays(pays);
         }
         touriste.AfficherListePays();
-        
+
         System.out.print("how many country that u want to leave comment for : ");
         n = scanner.nextInt();
         scanner.nextLine();
