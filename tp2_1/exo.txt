@@ -1,0 +1,9 @@
+In this exercise, we will implement the management of a simple library containing books, where each book must have an author. To do this, we will start by creating the "Person" class (which represents both authors and book buyers). This class is characterized by a first name, a last name, and a birth year.
+
+Next, create the "Document" class in such a way that each document must have a name and at least one author (up to a maximum of 5 authors).
+- Add the "NbrAuteur()" method to the "Document" class, which returns the number of authors for a document.
+- Also, add the "toString()" method to display the name and authors of a document.
+
+Now, create the "Livre" class, which is defined as a subclass of the "Document" class. The "Livre" class has attributes such as ISBN, Price, and Year.
+- Redefine the "toString()" method in the "Livre" class to display all the information about a book except its price.
+- Add a method called "PrixVente(Personne p)" that displays the selling price of each book. The price will be reduced by 20% for people under the age of 20. Additionally, it needs to check if the person passed as a parameter is the author of the book. In that case, the price will be displayed as 0, so the book is always free for its author(s).
