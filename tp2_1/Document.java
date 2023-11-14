@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Document {
     private String name;
@@ -8,7 +7,10 @@ public class Document {
     public Document(String name, ArrayList<Personne> authors) {
         this.name = name;
         this.authors = authors;
-    } 
+    }
+
+    public Document() {
+    }
 
     public int NbrAuteur() {
         return authors.size();
@@ -21,7 +23,10 @@ public class Document {
             authorNames.append(author.getNom()).append(" ").append(author.getPrenom()).append(", ");
         }
 
-        return "Document: " + name + "\nAuthors: " + authorNames.toString();
-        //return "Document: " + name + "\nAuthors: " + authorNames.toString().substring(0, authorNames.length() - 2);
+        return "Document: " + name + "\nAuthors: " + authorNames.toString() +"\n";
+    }
+
+    public String getName() {
+        return name;
     }
 }

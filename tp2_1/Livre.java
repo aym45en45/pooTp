@@ -1,12 +1,10 @@
-import java.util.ArrayList;
 
 public class Livre extends Document {
     private String ISBN;
     private double price;
     private int year;
 
-    public Livre(String name, ArrayList<Personne> authors, String ISBN, double price, int year) {
-        super(name, authors);
+    public Livre( String ISBN, double price, int year) {
         this.ISBN = ISBN;
         this.price = price;
         this.year = year;
@@ -14,7 +12,7 @@ public class Livre extends Document {
 
     @Override
     public String toString() {
-        return super.toString() + "\nISBN: " + ISBN + "\nYear: " + year;
+        return "\nISBN: " + ISBN + "\nYear: " + year;
     }
     public double PrixVente(Personne p){
         for (Personne author : super.authors) {
