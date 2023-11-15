@@ -24,7 +24,7 @@ public class Document {
         }
 
         return "Document: " + name + "\nAuthors: " + authorNames.toString() +"\n";
-    }
+    } 
 
     public String getName() {
         return name;
