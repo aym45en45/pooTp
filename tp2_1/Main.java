@@ -3,7 +3,6 @@ import java.util.Random;
 
 public class Main {
     private static final int N = 100;
-    private static final int ND = 3;
     private static final String[] NAMES = {
             "Muhammad", "Aisha", "Ahmed", "Fatima", "Omar", "Leila", "Hasan", "Layla", "Ali", "Mariam"
     };
@@ -18,14 +17,11 @@ public class Main {
         for (int i = 0; i < personne.length; i++) {
 
             int randomIndex = random.nextInt(NAMES.length);
-            String name = NAMES[randomIndex];
             int randomIndexx = random.nextInt(NAMES.length);
-            String prenom = PRENOMS[randomIndexx];
-            int year = random.nextInt(82) + 1923;
-            personne[i] = new Personne(name, prenom, year);
+            personne[i] = new Personne(NAMES[randomIndex], PRENOMS[randomIndexx], (random.nextInt(82) + 1923));
         }
 
-        int numberOfAuther = random.nextInt(4) + 1;
+        int numberOfAuther = random.nextInt(5) + 1;
         System.out.println("the numberOfAuther is " + numberOfAuther + "\n");
         ArrayList<Integer> authorIndex = new ArrayList<>();
         for (int i = 0; i < numberOfAuther; i++) {
@@ -36,20 +32,28 @@ public class Main {
             authorIndex.add(randomIndex);
         }
 
-        Document[] documents = new Document[ND];
+        Document[] documents = new Document[3];
         for (int i = 0; i < documents.length; i++) {
             ArrayList<Personne> authors = new ArrayList<>();
-            int numberOfAutherInDoc = random.nextInt(numberOfAuther-1) + 1;
+            int numberOfAutherInDoc = random.nextInt(numberOfAuther) + 1;
             for (int j = 0; j < numberOfAutherInDoc; j++) {
                 authors.add(personne[authorIndex.get(j)]);
             }
-            documents[i] = new Document("Document " + i, authors);
+            documents[i] = new Document("Document " + (i+1), authors);
         }
 
-        for (Document doc : documents) {
-            System.out.println("the number of the Auteur in is " + doc.NbrAuteur());
-            System.out.println(doc.toString());
-        }
-        
+        Livre livre = new Livre(documents[0].getName(), documents[0].authors, "132548", 17.99, 2010);
+        Livre livre1 = new Livre(documents[1].getName(), documents[1].authors, "156432", 17.99, 2019);
+        Livre livre2 = new Livre(documents[2].getName(), documents[2].authors, "789453", 17.99, 2006);
+        // random buyer
+        System.out.println(livre.toString());
+        System.out.println(livre.PrixVente(personne[random.nextInt(N)]));
+        // buyer that is 12 years old 
+        System.out.println(livre1.toString());
+        Personne p = new Personne("aymen", "rouissa", 2011);
+        System.out.println(livre1.PrixVente(p));
+        // buyer in an author
+        System.out.println(livre2.toString());
+        System.out.println(livre2.PrixVente(personne[authorIndex.get(0)]));
     }
 }
