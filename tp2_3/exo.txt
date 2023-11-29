@@ -1,0 +1,13 @@
+Define a class "Vehicle" with attributes that are common for any type of vehicle, namely: the brand, purchase date, and purchase price of the vehicle. Define a public method "display()" that displays the values of these attributes.
+
+Define two classes, "Car" and "Plane," inheriting from the "Vehicle" class. The "Car" class has attributes such as "NumberDoors," "Power," and "Mileage." On the other hand, the "Plane" class is characterized by the "FlightHours."
+
+- Add a method "calculatePrice()" in the "Vehicle" class that calculates the price of a used vehicle, where the price is reduced by 5% for each year of the vehicle's seniority.
+
+- Redefine this method in the "Car" class to consider the mileage, so that the vehicle's price is reduced by 10% for every 100,000 kilometers the car has traveled.
+
+- Also, redefine the "calculatePrice()" method in the "Plane" class, where the price of the plane is reduced by 8% for every 5000 flight hours.
+
+- Redefine the "display()" method in the "Car" and "Plane" classes to be able to display their information.
+
+- Redefine the "equals()" method in the "Vehicle" class to compare if two vehicles are identical.
