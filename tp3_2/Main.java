@@ -45,10 +45,10 @@ public class Main {
         }
         System.err.println("---------------------");
         helicoptere.afficher();
-        if(helicoptere.CanFly())
-        System.err.println("the helicoptere can fly");
-        if(voiture.RoadDriving())
-        System.err.println("the voiture can driv");
+        if (helicoptere.CanFly())
+            System.err.println("the helicoptere can fly");
+        if (voiture.RoadDriving())
+            System.err.println("the voiture can driv");
 
     }
 }

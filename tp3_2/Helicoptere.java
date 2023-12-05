@@ -36,7 +36,7 @@ public class Helicoptere extends Vehicule implements Flight {
         return true;
 
     }
-    
+
     @Override
     public boolean LongDistanceFlight() {
         if (Heure_de_Vol > 1000)

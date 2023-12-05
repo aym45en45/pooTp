@@ -21,7 +21,7 @@ public class Avion extends Vehicule implements Flight {
     public void afficher() {
         System.out.println("prix aftetr promo " + calculprix() + "\nheuresDeVol est " + heuresDeVol);
     }
-    
+
     @Override
     public boolean equals(Object o) {
         if (this == o)
@@ -37,7 +37,7 @@ public class Avion extends Vehicule implements Flight {
         return true;
 
     }
-    
+
     @Override
     public boolean LongDistanceFlight() {
         if (heuresDeVol > 1000)

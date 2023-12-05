@@ -10,7 +10,7 @@ public abstract class Vehicule {
     }
 
     public abstract void afficher();
-    
+
     @Override
     public abstract boolean equals(Object o);
 
