@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Enseignant extends Personne implements Comparable<Enseignant>{
 
     private ArrayList<String>  module;
-    private static ArrayList<Enseignant>  SEnseignant;
+    private static ArrayList<Enseignant>  SEnseignant=new ArrayList<>() ;
     private String nom;
     
 

@@ -15,7 +15,6 @@ public class Main {
         Personne prs = new Personne("mouhamed", "soualme", 50);
         prs = ens; // no error here car we make cast-up
         // ens = prs; we have an error here car Enseignant is Perssone subClass so we need to make cast-down first
-        student = (Etudiant) prs; // no error herre car we make cast-down
-
+        // student = (Etudiant) prs; there is ClassCastException error here car opj prs that is type Person have to be instens of Etudian
     }
 }

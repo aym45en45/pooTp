@@ -1,34 +1,42 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
         ArrayList<Float> notes = new ArrayList<>();
         Etudiant student = new Etudiant("rouissa", "aymen", 22, notes);
-        student.stocker();
+        System.out.println("Enter notes of the Student 1 :");
+        student.RemplirNotes(); 
         Etudiant student1 = new Etudiant("brahmia", "abdou", 20, notes);
-        student1.stocker();
+        System.out.println("Enter notes of the Student 2 :");
+        student1.RemplirNotes(); 
         Etudiant student2 = new Etudiant("belmokhi", "dibaj", 19, notes);
+        System.out.println("Enter notes of the Student 3 :");
+        student2.RemplirNotes(); 
+        student.stocker();
+        student1.stocker();
         student2.stocker();
+
+        Collections.sort(Etudiant.getSEtudiant());
         for (int i = 0; i < 3; i++) {
-            System.out.println("Enter notes of the Student "+(i+1)+" :");
-            student2.getSEtudiant().get(i).RemplirNotes();            
-        }
-        for (int i = 0; i < 3; i++) {
-            System.out.println(student.getSEtudiant().get(i).toString());
+            System.out.println(Etudiant.getSEtudiant().get(i).toString());
         }
         
         ArrayList<String> modules = new ArrayList<>();
-        Enseignant ens = new Enseignant("rsa", "rabah", 28, modules);
+        Enseignant ens = new Enseignant("mouatsi", "moudjib", 20, modules);
+        ens.stocker();
         Enseignant ens1 = new Enseignant("rsa", "rabah", 28, modules);
-        Enseignant ens2 = new Enseignant("rsa", "rabah", 28, modules);
+        ens1.stocker();
+        Enseignant ens2 = new Enseignant("aymen", "rabah", 28, modules);
+        ens2.stocker();
         for (int i = 0; i < 3; i++) {
             System.out.println("Enter modules of the teacher"+(i+1)+" :");
-            ens.getSEnseignant().get(i).RemplirNotes();            
-            ens.AffecterModules();
+            Enseignant.getSEnseignant().get(i).AffecterModules();          
+            
         }
+        Collections.sort(Enseignant.getSEnseignant());
         for (int i = 0; i < 3; i++) {
-            System.out.println(student.getSEtudiant().get(i).toString());
+            System.out.println(Enseignant.getSEnseignant().get(i).toString());
         }
-        System.out.println(ens.toString());
     }
 }
