@@ -1,5 +1,6 @@
 
 
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,16 +11,16 @@ public class Etudiant extends Personne implements Comparable<Etudiant>{
     
     private int age;
     
-    public Etudiant(String nom, String prenom, int age, ArrayList<Float> note) {
+    public Etudiant(String nom, String prenom, int age) {
         super(nom, prenom, age);
-        this.note = note;
+        this.note =new ArrayList<>();
         this.age=age;
     }
 
     public void RemplirNotes() {
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < 5; i++) {
-            SEtudiant.get(0).note.add(scanner.nextFloat());
+            this.note.add(scanner.nextFloat());
         }
     }
 
@@ -48,7 +49,7 @@ public class Etudiant extends Personne implements Comparable<Etudiant>{
 
     @Override
     public String toString() {
-        return super.toString() + "note :" + SEtudiant.get(0).note.toString() + "\nLa moyenne est :" + this.CalculMoyenne();
+        return super.toString() + "note :" + note.toString() + "\nLa moyenne est :" + this.CalculMoyenne();
     }
 
     public static ArrayList<Etudiant> getSEtudiant() {

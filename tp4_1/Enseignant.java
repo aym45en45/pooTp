@@ -1,5 +1,6 @@
 
 
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ public class Enseignant extends Personne implements Comparable<Enseignant>{
 
     public Enseignant(String nom, String prenom, int age, ArrayList<String>  module) {
         super(nom, prenom, age);
-        this.module = module;
+        this.module =new ArrayList<>();
         this.nom=nom;
     }
 
